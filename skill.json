@@ -1,0 +1,65 @@
+{
+  "name": "genpark-personal-agent-binaural-beat-acoustic-entrainment-skill",
+  "version": "1.0.0",
+  "title": "Auditory Binaural Beat & Acoustic EEG Entrainment Scheduler Skill",
+  "description": "Carrier frequency synthesis, binaural beat delta/theta/alpha/gamma tuning, and neurocognitive mental state audio scheduler. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "binaural-beats",
+    "brainwave-entrainment",
+    "acoustic-focus",
+    "neuroplasticity",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "synthesize_binaural_carrier_frequencies",
+      "description": "Generate left/right channel frequencies for desired target EEG brainwave state.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_state": {
+            "type": "string",
+            "enum": [
+              "deep_sleep_delta",
+              "meditative_theta",
+              "relaxed_flow_alpha",
+              "hyper_focus_gamma"
+            ]
+          },
+          "base_carrier_hz": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "target_state"
+        ]
+      }
+    },
+    {
+      "name": "generate_acoustic_entrainment_session_plan",
+      "description": "Synthesize a 45-minute timed audio ladder session transitioning from high-beta to target state.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "starting_state": {
+            "type": "string"
+          },
+          "desired_state": {
+            "type": "string"
+          },
+          "session_duration_minutes": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "desired_state"
+        ]
+      }
+    }
+  ]
+}
